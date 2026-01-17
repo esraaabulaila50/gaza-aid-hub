@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaza Aid Hub</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ======= Header ======= -->
+<header>
+    <nav class="navbar navbar-expand-lg container">
+        <a class="navbar-brand" href="#">Gaza Aid Hub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#hero">الرئيسية</a></li>
+                <li class="nav-item"><a class="nav-link" href="#aids">المساعدات</a></li>
+                <li class="nav-item"><a class="nav-link" href="#media">فيديو</a></li>
+                <li class="nav-item"><a class="nav-link" href="#helpFormSection">طلب مساعدة</a></li>
+                <li class="nav-item"><a class="nav-link" href="#values">قيمنا الإنسانية</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center justify-content-center text-center">
+    <div>
+        <h1>Gaza Aid Hub</h1>
+        <p>منصة تفاعلية لتسهيل الوصول إلى المساعدات الإنسانية في غزة</p>
+        <a href="#helpFormSection" class="btn btn-primary">قدّم طلب مساعدة</a>
+    </div>
+</section>
+<div class="container text-center my-4">
+    <img src="c:\Users\pc922\Desktop\gaza-aid-hub\assets\images\واجهة الموقع.jpg" 
+         alt="مساعدات إنسانية في غزة" 
+         class="img-fluid rounded shadow-sm" 
+         style="width: 100%; height: 250px; object-fit: cover;">
+</div>
+
+
+<!-- الفوتر -->
+<footer> ... </footer>
+<!-- ======= Section: Aid Table ======= -->
+<section id="aids" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">جدول المساعدات المتوفرة</h2>
+
+        <div class="mb-3 text-center">
+            <label for="filterArea" class="form-label fw-bold">اختر المنطقة:</label>
+            <select id="filterArea" class="form-select w-50 mx-auto">
+                <option value="all">كل المناطق</option>
+                <option value="غزة">غزة</option>
+                <option value="خانيونس">خانيونس</option>
+                <option value="رفح">رفح</option>
+            </select>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered text-center">
+                <thead class="table-primary">
+                    <tr>
+                        <th>نوع المساعدة</th>
+                        <th>المنطقة</th>
+                        <th>الموعد</th>
+                        <th>الحالة</th>
+                    </tr>
+                </thead>
+                <tbody id="aidTable">
+                    <!-- يتم تعبئته من JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+<!-- ======= Section: Help Form ======= -->
+<section id="helpFormSection" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">طلب مساعدة</h2>
+        <form id="helpForm" class="w-75 mx-auto">
+            <div class="mb-3">
+                <label for="name" class="form-label">الاسم الكامل:</label>
+                <input type="text" class="form-control" id="name" placeholder="أدخل اسمك">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">البريد الإلكتروني:</label>
+                <input type="email" class="form-control" id="email" placeholder="أدخل بريدك">
+            </div>
+            <div class="mb-3">
+                <label for="area" class="form-label">المنطقة:</label>
+                <select id="area" class="form-select">
+                    <option value="">اختر المنطقة</option>
+                    <option value="غزة">غزة</option>
+                    <option value="خانيونس">خانيونس</option>
+                    <option value="رفح">رفح</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">نوع المساعدة:</label>
+                <select id="type" class="form-select">
+                    <option value="">اختر نوع المساعدة</option>
+                    <option value="غذاء">غذاء</option>
+                    <option value="دواء">دواء</option>
+                    <option value="مياه">مياه</option>
+                    <option value="إيواء">إيواء</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">ملاحظات إضافية:</label>
+                <textarea id="message" class="form-control" rows="3" placeholder="يمكنك كتابة أي ملاحظات"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">إرسال الطلب</button>
+        </form>
+        <div id="successMsg" class="alert alert-success mt-3 text-center d-none">
+            تم إرسال طلبك بنجاح!
+        </div>
+    </div>
+</section>
+<section id="media" class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="mb-4">فيديو توعوي عن المساعدات الإنسانية</h2>
+        <p class="text-muted mb-4">
+            اضغطي على الصورة لتشغيل الفيديو التوعوي لقافلة المساعدات في غزة.
+        </p>
+
+        <div class="video-thumbnail position-relative mx-auto" style="width: 80%; cursor: pointer;">
+            <img src=" c:\Users\pc922\Desktop\gaza-aid-hub\assets\images\صورة واتساب بتاريخ 1447-07-01 في 14.18.47_e33a9ef6.jpg"
+                 alt="مساعدات انسانية في غزة"
+                 class="img-fluid shadow rounded">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                <i class="bi bi-play-circle-fill" style="font-size: 80px; color: white;"></i>
+            </div>
+        </div>
+
+        <div class="ratio ratio-16x9 shadow rounded mt-3 d-none" id="videoPlayer">
+            <iframe 
+                src="C:\Users\pc922\Desktop\gaza-aid-hub\assets\video\صندوق تحيا مصر يطلق قافلة مساعدات إنسانية للأشقاء في قطاع غزة (2).mp4" 
+                title="إطلاق أكبر قافلة مساعدات إنسانية إلى غزة"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <p class="text-center text-muted mt-2">
+            مشاهد من إرسال قافلة مساعدات تضم شحنات غذائية وطبية وغيرها، لمساعدة المدنيين في غزة خلال الأزمة الإنسانية.
+        </p>
+    </div>
+</section>
+<section id="organizations" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">مؤسسات داعمة في غزة</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/images/aid-distribution.jpg" class="card-img-top" alt="برنامج الغذاء العالمي">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">برنامج الغذاء العالمي</h5>
+                        <p class="card-text">
+                            تقديم مساعدات غذائية طارئة للأسر المتضررة في قطاع غزة.
+                        </p>
+                        <a href="https://www.un.org/helpgaza-ar" target="_blank" class="btn btn-primary">
+                            زيارة الموقع
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="c:\Users\pc922\Desktop\gaza-aid-hub\assets\images\human values.jpg" class="card-img-top" alt="الأونروا">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">الأونروا (UNRWA)</h5>
+                        <p class="card-text">
+                            خدمات إغاثية، صحية، تعليمية للاجئين الفلسطينيين في غزة.
+                        </p>
+                        <a href="https://www.unrwa.org/ar" target="_blank" class="btn btn-primary">
+                            زيارة الموقع
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="c:\Users\pc922\Desktop\gaza-aid-hub\assets\images\aid-gaza.jpg" class="card-img-top" alt="مؤسسة التعاون">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">مؤسسة التعاون</h5>
+                        <p class="card-text">
+                            دعم إنساني وتنموي لإعادة الإعمار ومساعدة المتضررين.
+                        </p>
+                        <a href="https://www.taawon.org/ar/gazaaid" target="_blank" class="btn btn-primary">
+                            زيارة الموقع
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ======= Section: Human Values ======= -->
+<section id="values" class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="mb-4">قيمنا الإنسانية</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-3 col-sm-6 mb-3">
+                <i class="bi bi-hand-thumbs-up display-3 text-primary"></i>
+                <h5 class="mt-2">التعاون</h5>
+                <p class="text-muted">نعمل مع المؤسسات والمجتمع المحلي بروح الفريق الواحد.</p>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <i class="bi bi-heart-fill display-3 text-danger"></i>
+                <h5 class="mt-2">الرحمة</h5>
+                <p class="text-muted">تقديم الدعم والمساعدة لمن يحتاجها دون تمييز.</p>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <i class="bi bi-lightning-fill display-3 text-warning"></i>
+                <h5 class="mt-2">الاستجابة السريعة</h5>
+                <p class="text-muted">التصرف بسرعة وكفاءة عند وجود أي أزمة إنسانية.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ======= Footer ======= -->
+<footer class="text-center">
+    <div class="container">
+        <p>&copy; 2026 Gaza Aid Hub | جميع الحقوق محفوظة</p>
+    </div>
+</footer>
+
+<!-- ======= JS Libraries ======= -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script src="js/main.js"></script>
+</body>
+</html>
